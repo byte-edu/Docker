@@ -1,6 +1,6 @@
 FROM	busybox:1.31.1
 ENV	WEB_ROOT=/www/data
 RUN	mkdir -p ${WEB_ROOT} ;\
-	echo "Welcome to Byte-Edu. || Version: 2.0. || HostName: $(hostname)" >> ${WEB_ROOT}/index.html
+	echo "Welcome to Byte-Edu. || Version: 2.0." >> ${WEB_ROOT}/index.html
 STOPSIGNAL	9
-CMD	/bin/httpd -f -h ${WEB_ROOT}
+CMD	echo "HostName: $(hostname)" >> ${WEB_ROOT}/index.html ;/bin/httpd -f -h ${WEB_ROOT}
