@@ -3,4 +3,5 @@ ENV	WEB_ROOT=/www/data
 RUN	mkdir -p ${WEB_ROOT} ;\
         echo "<h3>HostName: <span style=\"color: green\">$(hostname)</span></h3>" >> ${WEB_ROOT}/hostname.html ;\
 	echo "<h3>Welcome to <a href=\"https://www.byte-edu.com\" target=\"_blank\">www.Byte-Edu.com</a></h3><h4>Version: 1.0</h4><h4><a href="/hostname.html">HostName</a></h4>" >> ${WEB_ROOT}/index.html
+STOPSIGNAL	9
 CMD	/bin/httpd -f -h ${WEB_ROOT}
